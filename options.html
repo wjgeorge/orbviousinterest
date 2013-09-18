@@ -1,0 +1,323 @@
+﻿<html>
+<head>
+   <title>ChromeRIL Options</title>
+   <link rel="stylesheet" type="text/css" href="options.css" />
+   <script type="text/javascript" src="jquery-1.8.2.js"></script>
+   <script type="text/javascript" src="options.js"></script>
+</head>
+
+<body>
+   <h1>Orbvious Interest Options
+      <g:plusone size="small" href="http://shalom.craimer.org/projects/orbviousinterest/"></g:plusone>
+   </h1>
+
+<div id="options">
+
+<nav id="tabs">
+   <ul>
+      <li rel='authentication'>Authentication</li>
+      <li rel='icon'>Icon / Popup</li>
+      <li rel='page'>Page Options</li>
+      <li rel='googlereader'>Google Reader Integration</li>
+      <li rel='autorefresh'>Auto Refresh</li>
+      <li rel='debug'>Debugging</li>
+      <li rel='credit' class="active">About</li>      
+   </ul>
+</nav>
+
+<section id="content">
+   <div id="authentication" class="optiongroup">
+      <span class="title">Authentication Options</span>
+      <p>If you have a username for Pocket (<a href="http://getpocket.com/">getpocket.com</a>), enter it below.<br/>
+      Otherwise, you can <a href="http://getpocket.com/signup/" target="_blank">signup</a> very easily!
+      <br/>
+      Username: <input type="text" name="username" id="username" value="" />
+      <br/>
+      Password: <input type="password" name="password" id="password" value="" />
+      <br/>
+      <button id="checkAuth">Sign In</button>
+      </p>
+   </div>    
+
+   <div id="icon" class="optiongroup">
+      <span class="title">Icon ("Browser Action") Options</span>
+      <p>
+      <input type="checkbox" id="showunreadcountbadge"
+      checked="checked" value="1" />
+      <label for="showunreadcountbadge">Show the number of unread items as a
+         badge on the icon</label>
+      </p>
+      <p>
+      <input type="checkbox" id="indicatewhenread" value="1" />
+      <label for="indicatewhenread">If a page is marked as read, show a
+         green icon</label>
+      </p>      
+
+      <span class="title">Popup Options</span>
+      <p>
+      Number of items to show per page:
+      <input type="text" id="itemsPerPage" value="" maxlength="2" size="3" />
+      <br/>
+      (Because Chrome popups are limited to 800x600, no more than 9 items can
+         fit on a single page, when they are all 2-lines long.)
+      </p>
+      <p>
+      <input type="checkbox" id="askfortagsonadd" value="0" />
+      <label for="askfortagsonadd">Edit the tags of the page when adding it to
+         the unread list.</label><br/>
+      If this is enabled, the popup will not close until you press the "Save"
+      button for the tags. If you close the popup without saving the tags, the
+      page will be saved to the list once the popup closes.
+      </p>
+
+      <p>
+      <input type="checkbox" id="showdateinpopup" value="0" />
+      <label for="showdateinpopup">In the list of items, show the date on which
+         the page was added.</label><br/>
+      </p>
+
+      <p>
+      <input type="checkbox" id="showdeleteinpopup" value="0" />
+      <label for="showdeleteinpopup">In the list of items, show the 'Delete' button.</label><br/>
+      </p>
+
+      <span class="title">Opening Items in the Popup</span>      
+      <p>
+      <input type="checkbox" id="markunreaditemsasread" value="0" />
+      <label for="markunreaditemsasread">Mark items as read when they are
+         opened.</label><br/>
+      </p>
+
+      <p>
+      <input type="checkbox" id="openitemswithoutclosingpopup" value="0" />
+      <label for="openitemswithoutclosingpopup">Open items without closing
+         the popup.</label><br/>
+      </p>
+   </div>
+
+   <div id="googlereader" class="optiongroup">
+      <span class="title">Google Reader Integration</span>
+      <p>
+      <input type="checkbox" id="googlereaderintegration"
+      checked="checked" value="1" />
+      <label for="googlereaderintegration">
+         Enable Google Reader integration<br/>
+         (Please reload the Google Reader page to update.)
+      </label>
+      </p>
+
+      <p>
+      <input type="checkbox" id="googlereaderkeyenable" value="1" />
+      <label for="googlereaderkeyenable">
+         Shortcut key to add the current Google Reader item:
+      </label>
+      <select id="googlereaderkeymodifier">
+         <option value="0" selected="selected"></option>
+         <option value="1">ctrl</option>
+         <option value="2">alt</option>
+         <option value="8">command (meta)</option>
+         <option value="5">ctrl-shift</option>
+         <option value="6">alt-shift</option>
+         <option value="12">command-shift</option>
+         <option value="3">ctrl-alt</option>
+         <option value="7">ctrl-alt-shift</option>
+      </select>
+      <input type="text" id="googlereaderkeycode" size="1" maxlength="1"
+          value="z" />
+      <br/>
+      Please avoid using shortcuts that have been reserved by the broweser,
+      such as CTRL-C, CTRL-U, ALT-F, etc. They don't always work.
+      </p>
+   </div>
+
+   <div id="page" class="optiongroup">
+      <span class="title">Context Menu Options</span>
+
+      <p>
+      <input type="checkbox" id="contextmenupageitem"
+      checked="checked" value="1" />
+      <label for="contextmenupageitem">
+         Show "Save to Read Later" in the context-menu for each
+         <strong>page</strong>
+      </label><br/>
+
+      <input type="checkbox" id="contextmenulinkitem"
+      checked="checked" value="1" />
+      <label for="contextmenulinkitem">
+         Show "Save link to Read Later" in the context-menu for each
+         <strong>link</strong>
+      </label><br/>
+      </p>            
+
+      <span class="title">Save Position</span>
+
+      <p>
+      <input type="checkbox" id="rememberlastposition" checked="checked" value="1" />
+      <label for="rememberlastposition">Save the position of the page when you
+         read it.</label><br/>
+      (The next time you load the page, it will automatically scroll to the
+      last place you were reading. This even works between this extension the
+      official Firefox extension.)
+      </p>
+
+     <span class="title">Shortcut Key Options</span>
+      <p>
+      <input type="checkbox" id="addunreadshortcutkeyenabled"
+      checked="checked" value="1" />
+      <label for="addunreadshortcutkeyenabled">Shortcut key to add page to
+         unread list:</label>
+      <select id="addunreadshortcutkeymodifier">
+         <option value="1">ctrl</option>
+         <option value="2" selected="selected">alt</option>
+         <option value="8">command (meta)</option>
+         <option value="5">ctrl-shift</option>
+         <option value="6">alt-shift</option>
+         <option value="12">command-shift</option>
+         <option value="3">ctrl-alt</option>
+         <option value="7">ctrl-alt-shift</option>
+      </select>
+      <input type="text" id="addunreadshortcutkey" size="1"
+      maxlength="1" value="u" />
+      <br/>
+      Please avoid using shortcuts that have been reserved by the broweser,
+      such as CTRL-C, CTRL-U, ALT-F, etc. They don't always work.
+      </p>      
+   </div>
+
+   <div id="autorefresh" class="optiongroup">
+      <span class="title">Auto Refresh</span>
+      <p>
+      <input type="checkbox" id="enableidlenessautorefresh" value="0" />
+      <label for="enableidlenessautorefresh">Automatically refresh the list of
+         items at the first sign of activity after 6 hours of idleness.</label>
+      </p>
+   </div>
+
+   <div id="credit" class="optiongroup active">
+      <span class="title">About</span>
+      <p>
+      Shalom Craimer (that's me, by the way) did all the initial coding and
+      graphics.
+      </p>
+
+      <p>If you enjoy Orbvious Interest, and would like to show your support,
+      I'd appreciate it if you could send some money to me.
+      It really cheers me up, and keeps me adding features!</p>
+
+   <div id="payments">      
+      <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post"> 
+         <input type="hidden" name="cmd" value="_xclick"/> 
+         <input type="hidden" name="business" value="DHF9CP74ECJ4W"/> 
+         <input type="hidden" name="lc" value="IL"/> 
+         <input type="hidden" name="item_name" value="Orbvious Interest"/> 
+         <input type="hidden" name="item_number" value="MakeOrbviousInterestBetter"/> 
+         <input type="hidden" name="button_subtype" value="services"/> 
+         <input type="hidden" name="currency_code" value="USD"/> 
+         <input type="hidden" name="bn" value="Orbvious_BuyNow_WPS_US"/> 
+         <table> 
+            <tr><td><input type="hidden" name="on0" value="Amount"/></td></tr> 
+            <tr><td> 
+                  <select name="os0"> 
+                        <option value="Huge Thanks">Huge Thanks $10.00</option> 
+                        <option value="Big Thanks">Big Thanks $5.00</option> 
+                        <option value="Double Thanks" selected="selected">Double Thanks $2.00</option> 
+                        <option value="Thank You">Thank You $1.00</option> 
+                  </select> 
+               </td> 
+            </tr> 
+         </table> 
+         <input type="hidden" name="currency_code" value="USD"/> 
+         <input type="hidden" name="option_select0" value="Huge Thanks"/> 
+         <input type="hidden" name="option_amount0" value="10.00"/> 
+         <input type="hidden" name="option_select1" value="Big Thanks"/> 
+         <input type="hidden" name="option_amount1" value="5.00"/> 
+         <input type="hidden" name="option_select2" value="Double Thanks"/> 
+         <input type="hidden" name="option_amount2" value="2.00"/> 
+         <input type="hidden" name="option_select3" value="Thank You"/> 
+         <input type="hidden" name="option_amount3" value="1.00"/> 
+         <input type="hidden" name="option_index" value="0"/> 
+         <input type="image" src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_buynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!"/> 
+         <img alt="" style="border: 0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/> 
+      </form> 
+ 
+<form class="googlecheckout" action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/118226439542762" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top"> 
+    <table> 
+        <tr> 
+            <td> 
+                <select name="item_selection_1"> 
+                    <option value="1">Big Thanks $5.00</option> 
+                    <option value="2" selected="selected">Double Thanks $2.00</option> 
+                    <option value="3">Thank You $1.00</option> 
+                </select> 
+                <input name="item_option_name_1" type="hidden" value="Big Thanks"/> 
+                <input name="item_option_price_1" type="hidden" value="5.0"/> 
+                <input name="item_option_description_1" type="hidden" value=""/> 
+                <input name="item_option_quantity_1" type="hidden" value="1"/> 
+                <input name="item_option_currency_1" type="hidden" value="USD"/> 
+                <input name="shopping-cart.item-options.items.item-1.digital-content.key" type="hidden" value="kpBSBlaZwYi/OHPM96UwuCytnVDk1uSw0nGuRQHW0g4="/> 
+                <input name="shopping-cart.item-options.items.item-1.digital-content.key.is-encrypted" type="hidden" value="true"/> 
+                <input name="item_option_name_2" type="hidden" value="Double Thanks"/> 
+                <input name="item_option_price_2" type="hidden" value="2.0"/> 
+                <input name="item_option_description_2" type="hidden" value=""/> 
+                <input name="item_option_quantity_2" type="hidden" value="1"/> 
+                <input name="item_option_currency_2" type="hidden" value="USD"/> 
+                <input name="shopping-cart.item-options.items.item-2.digital-content.key" type="hidden" value="CTWCETB4U46K5icHSgbZYijX2Bsy1GbCFeDGWKUpcjY="/> 
+                <input name="shopping-cart.item-options.items.item-2.digital-content.key.is-encrypted" type="hidden" value="true"/> 
+                <input name="item_option_name_3" type="hidden" value="Thank You"/> 
+                <input name="item_option_price_3" type="hidden" value="1.0"/> 
+                <input name="item_option_description_3" type="hidden" value=""/> 
+                <input name="item_option_quantity_3" type="hidden" value="1"/> 
+                <input name="item_option_currency_3" type="hidden" value="USD"/> 
+                <input name="shopping-cart.item-options.items.item-3.digital-content.key" type="hidden" value="8qcesx9Nr7ZqMYVQsEmP44ys+zTEProyglyev/wCN7g="/> 
+                <input name="shopping-cart.item-options.items.item-3.digital-content.key.is-encrypted" type="hidden" value="true"/> 
+             </td> 
+          </tr> 
+          <tr> 
+            <td> 
+                <input alt="Checkout with Google" src="https://checkout.google.com/buttons/buy.gif?merchant_id=118226439542762&amp;w=121&amp;h=44&amp;style=trans&amp;variant=text&amp;loc=en_US" type="image"> 
+            </td> 
+        </tr> 
+    </table> 
+ </form> 
+      </div> 
+
+      <h3>Development Contributions:</h3>
+      <ul>
+         <li>Thanks to Niklas Schm&uuml;cker, for sending in an actual code patch to a problem with the tag-editing dialog! (It's so cool that there's a user that cares so much!)</li>
+         <li>
+      Thanks to a user called "samek.lu...", who designed a new user interface
+      for the popup. It's awesome! Feel free to use any of the icons from this
+      extension under the
+      <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
+         License</a>.
+         </li>
+         <li>Thanks to ezanker for providing a fix for <a href="http://code.google.com/p/chromeril/issues/detail?id=94">Issue #94</a> so that pages inside frames can be added.</li>
+         <li>Thanks to moccamarco, who opened issue <a href="http://code.google.com/p/chromeril/issues/detail?id=273">Issue #273</a> and submitted not only the feature request, but a code-patch to allow searching using multiple tags.</li>
+      </ul>
+
+      <p>I feel that Orbvious Interest could not exist without its users,
+      and so I thank you for using this extension! If you have any suggestions or error reports, you're most welcome to <a href="http://code.google.com/p/chromeril/issues/entry">open an issue</a>, and I'll fix it as soon as I can.</p>
+   </div>
+
+   <div id="debug" class="optiongroup">
+      <span class="title">Debugging Options</span>
+      <p>
+      <input type="checkbox" id="enabledebugging" value="0" />
+      <label for="enabledebugging">Enable debugging</label><br/>
+      Turn this on if you need to debug the extension or if the developer (Shalom) asks you to when helping you with a bug. Otherwise it just slows down the extension a little. (You won't notice unless you have thousands of items in your list.)
+      </p>
+   </div>
+
+   <p>
+      <button id="save">Save</button>
+   </p>
+
+</div>
+
+<span id="status"></span>
+
+</div>
+
+   <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+</body>
+</html>

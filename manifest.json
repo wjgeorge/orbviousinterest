@@ -1,0 +1,33 @@
+{
+   "background": {
+      "scripts": [ "jquery-1.8.2.js", "ril6.js", "background.RILBrowserAction.js", "background.ForeignRelations.js", "background.js", "jquery.DOMWindow.js" ]
+   },
+   "browser_action": {
+      "default_icon": "browseraction-notaddable.png",
+      "default_popup": "popup.html",
+      "default_title": "Read This Page Later"
+   },
+   "content_scripts": [ {
+      "css": [ "jquery.autocomplete.styles.css", "content.css" ],
+      "js": [ "jquery-1.8.2.js", "content.js", "jquery.DOMWindow.js", "jquery.autocomplete.js", "jquery.hotkeys-0.7.9.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Mark pages to read later. The fastest and most reliable Pocket (Read It Later) extension for Google Chrome\u2122",
+   "homepage_url": "http://shalom.craimer.org/projects/orbviousinterest/",
+   "icons": {
+      "128": "ext128.png",
+      "16": "ext16.png",
+      "32": "ext32.png",
+      "48": "ext48.png"
+   },
+   "incognito": "spanning",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCpcfUL1xDrk5aeEN1lkd+SvoAGgdP31AxvQR8JdREdz+uvAauBmVuSMnY/rKX4/Z3L28X0u/dr/TOTsFF6x+lAfsSFv+JM7fjQsCETBkYaV/y0PlXSzp8QAP/C7UTkc0uDrxBM73TYC5/JzH2+nIpqb/4OFuZk/uhuEopW8+Q9LwIDAQAB",
+   "manifest_version": 2,
+   "name": "Orbvious Interest",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "chrome://favicon/", "contextMenus", "http://*/*", "https://*/*" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.6.19.0",
+   "web_accessible_resources": [ "reader-unadded.png", "reader-added.png", "reader-loading.gif" ]
+}

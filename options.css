@@ -1,0 +1,127 @@
+body
+{
+   background: rgb(241, 242, 192);
+   color: rgb(51, 47, 41);
+}
+a, h1
+{
+   color: rgb(188, 53, 0);
+}
+#options
+{
+   width: 800px;
+   position: relative;
+   top: 0px;
+   left: 0px;
+}
+#tabs
+{
+   float: left;
+}
+#tabs ul 
+{
+   list-style-type: none;
+}
+#tabs ul
+{
+   margin: 0px;
+   padding: 0px;
+   width: 100px;
+}
+#tabs ul li
+{
+   background-color: rgb(204, 197, 158);
+   position: relative;
+   padding: 3px;
+   border: 1px solid black;
+   border-right-width: 0px;
+   border-bottom-width: 0px;
+}
+#tabs ul li:hover
+{
+   background-color: white;
+   cursor: pointer;
+}
+#tabs ul li:last-child
+{
+   border-bottom-width: 1px;
+}
+#tabs ul li.active
+{
+   background: rgb(241, 242, 192);
+   border-right: 1px solid rgb(241, 242, 192);
+   z-index: 1;
+}
+#content
+{
+   float: left;
+   margin: 0px;
+   width: 600px;
+   position: relative;
+   left: -1px;
+   z-index: 0;
+}
+.optiongroup
+{
+   border: 1px solid black;
+   padding: 10px;
+   display: none;
+   min-height: 350px;
+}
+.optiongroup.active
+{
+   display: block;
+}
+.optiongroup .title
+{
+   font-weight: bold;
+}
+#status
+{
+   background-color: rgb(143, 166, 58);
+   float: left;
+   display: none;
+}
+#status.error
+{
+   background-color: rgb(204, 57, 16);
+}
+
+#payments
+{
+   width: 410px;
+   height: 100px;
+   margin: auto;
+   display: block;
+   position: relative;
+}
+form.paypal 
+{
+   width: 200px;
+   float: left;
+}
+form.paypal:after
+{
+   content: "PayPal";
+   font-size: 11px;
+   font-family: Tahoma, sans-serif;
+   text-align: center;
+   clear: both;
+   display: block;
+}
+form.googlecheckout
+{
+   width: 200px;
+   height: 100%;
+   float: left;
+}
+.googlecheckout table
+{
+	border-collapse:collapse;
+	border-spacing: 0;
+}
+.googlecheckout td
+{
+	margin: 5px;
+}
+

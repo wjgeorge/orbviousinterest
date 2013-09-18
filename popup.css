@@ -1,0 +1,507 @@
+html.nonlogin {
+   width: 360px;
+   padding: 5px;
+   overflow: hidden;
+}
+body {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+*, html *, body *, td {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    -webkit-user-select: none;
+}
+input[type=text], input[type=search]
+{
+   -webkit-user-select: auto;
+}
+*:focus { outline: none; }
+#popup {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#pagecontrols
+{
+   height: 25px;
+   padding-bottom: 5px;
+}
+#pagecontrols .toolbaritem
+{
+   cursor: pointer;
+}
+#pagecontrols img
+{
+   padding: 6px;
+   width: 12px;
+   height: 12px;
+   border-radius: 4px;
+   background-image: -webkit-linear-gradient(#aaaaaa, #000000);
+}
+#pagecontrols s
+{
+   font-size: 13px;
+   position: relative;
+   top: -5px;
+   text-decoration: none;
+}
+#pagecontrols .disabled
+{
+   color: #ccc;
+   cursor: default;
+}
+#pagecontrols .disabled img
+{
+   background-image: -webkit-linear-gradient(#eee, #bbb);
+}
+
+.editingtags s
+{
+   display: none;
+}
+
+#tags
+{
+   display: none;
+   float: left;
+}
+.editingtags #tags
+{
+   display: block;
+}
+#tagstext
+{
+   width: 243px;
+   margin-right: 0;
+   margin-left: 5px;
+}
+#tagstext::-webkit-input-placeholder {
+   font-style: italic;
+   color: rgb(150, 150, 150);
+}
+
+#header {
+   height: 34px;
+   font-size: 12px;
+   background-color: #F4F4F4;
+   border: 1px solid #E7E7E7;
+   border-bottom: 0;
+   margin-bottom: 1px;
+   position: relative;
+}
+#unreadorread
+{
+   width: 22px;
+   height: 22px;
+   background: url('popup-add.png') no-repeat 10px 0px;
+   cursor: pointer;
+   float: left;
+   margin-top: 6px;
+   padding-left: 10px;
+   padding-right: 10px;
+   border-right: 1px solid #E5E5E5;
+   position: absolute;
+   right: 0px;
+   top: 0px;
+}
+#unreadorread.disabled
+{
+   visibility: hidden;
+}
+#unreadorread.remove
+{
+   background-image: url('popup-remove.png');
+}
+#listselector
+{
+   margin: 0;
+   padding: 0;
+   cursor: pointer;
+   color: silver;
+   float: left;
+}
+#listselector div
+{
+   height: 15px;
+   width: 70px;
+   padding-top: 3px;
+   padding-bottom: 3px;
+   margin-top: 7px;
+   margin-left: 21px;
+   margin-right: 10px;
+   text-align: center;
+   font-family: Tahoma;
+   font-size: 10px;
+   font-weight: bold;
+   text-transform: uppercase;
+   display: inline-block;
+   float: left;
+   color: #777777;
+}
+#listselector div:hover
+{
+   border-bottom: 3px solid #777777;
+}
+#listselector .active {
+   color: #545454;
+   border-bottom: 3px solid #545454;
+   cursor: default;
+}
+#header .toolbaritem
+{
+   display: inline-block;
+   text-decoration: none;
+   margin-top: 6px;
+   margin-right: 10px;
+   height: 21px;
+   width: 21px;
+   padding-bottom: 3px;
+   background-repeat: no-repeat;
+}
+#refresh {
+   background: url('popup-refresh.png');
+   padding-left: 10px;
+   background-position: 12px 0px;
+   border-left: 1px solid #E5E5E5;
+}
+#unreadlistonline { background: url('popup-globe.png'); }
+#options { background: url('popup-settings.png'); }
+
+#filtertools
+{
+   border-top: 1px solid #B4B4B4;
+   /* Generated using http://gradients.glrzad.com/ */
+   background-image: -webkit-gradient(
+   	linear,
+	   left top,
+   	left 20,
+	   color-stop(0, rgb(226,226,226)),
+   	color-stop(0.05, rgb(230,230,230)),
+	   color-stop(0.10, rgb(240,240,240)),
+   	color-stop(0.15, rgb(245,245,245)),
+   	color-stop(0.80, rgb(255,255,255))
+   );
+   margin-bottom: 10px;
+   padding: 5px;
+}
+#filtertools #filter
+{
+   width: 258px;
+   height: 22px;
+   font-family: Tahoma;
+   font-size: 9px;
+   text-transform: uppercase;
+
+   /* Fix position, so it can be put under the drop-down */
+   position: relative;
+   top: 0;
+   left: 0;
+   z-index: 0;
+}
+
+#filtertools #filter.reset
+{
+   color: #AAA;
+   font-style: italic;
+}
+
+#sortby
+{
+   font-family: Tahoma;
+   color: #898989;
+   width: 84px;
+   height: 22px;
+   margin-left: 4px;
+   position: relative;
+   top: 2px;
+}
+
+#listcontainer
+{
+   height: 440px;
+}
+
+#list ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+#list li {
+    height: 48px;
+    width: 358px;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-top: 3px;
+    border-bottom: 1px solid #e7e7e7;
+    margin-bottom: 2px;
+    overflow: hidden;
+}
+#list li:last-child
+{
+   border-bottom: none;
+}
+#list li:hover
+{
+}
+#list li img {
+   vertical-align:top;
+}
+#list .itembody,
+#list .itemeditbody {
+    margin-left: 2px;
+    display: inline-block;
+    width: 300px;
+    position: relative;
+}
+#list .itemeditbody {
+   margin-bottom: 2px;
+   top: -2px;
+}
+#edittitle {
+   width: 292px; /* Made this 4 extra pixels shorter to align with #savebutton*/
+   height: 16px;
+   font-size: 13px;
+   padding: 2px 1px 0px 2px;
+   border-width: 2px;
+}
+#edittags {
+   width: 244px;
+   height: 16px;
+   font-size: 13px;
+   margin-top: 2px;
+}
+#savebutton
+{
+   width: 48px;
+   height: 22px;
+   border-width: 2px;
+   font-size: 13px;
+   margin-left: 4px;
+   margin-right: 0;
+}
+#edittags.empty {
+   font-style: italic;
+   color: rgb(150, 150, 150);
+}
+#tagsautocomplete {
+   width: 250px;
+   max-height: 140px;
+   overflow: scroll-y;
+   position: absolute;
+   top: 46px;
+   left: 0;
+   display: none;
+   background-color: white;
+   border: 1px solid black;
+   z-index: 10;
+}
+#tagsautocomplete.show {
+   display: block;
+}
+#tagsautocomplete li.active {
+   background-color: black;
+   color: white;
+}
+#list ul li .link {
+    font-size: 13px;
+    text-decoration: none;
+    width: 300px;
+    word-wrap: break-word
+    overflow-y: hidden;
+}
+#list ul li .link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#list ul li.unmarked .link, 
+#list ul li.unmarked .hostname, 
+#list ul li.unmarked .when
+{
+   text-decoration: line-through;
+   color: silver;
+}
+#list ul li img {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#list ul li .details 
+{
+   font-size: 9px;
+   color: #777;
+   display: block;
+}
+
+/* Single-item controls */
+#list ul li .controls {
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+    width: 20px;
+    white-space: nowrap;
+    font-size: 12px;
+    width: 40px;
+    height: 12px;
+    visibility: hidden;
+}
+#list ul li.editable:hover .controls {
+    visibility: visible;
+}
+#list ul li .controls div {
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 12px;
+   height: 12px;
+   cursor: pointer;
+}
+#list ul li .controls .onlist {
+   background: url('popup-item-checkmark-unread.png');
+}
+#list ul li.unmarked .controls .onlist {
+   background: url('popup-item-checkmark-read.png');
+}
+#list ul li .controls .edit {
+   position: absolute;
+   right: 24px;
+   top: 0;
+   background: url('popup-item-edit.png');
+}
+#list ul li.unmarked .controls .edit {
+   display: none;
+}
+#list ul li .controls .text {
+   position: absolute;
+   right: 48px;
+   top: 0;
+   background: url('popup-item-textview.png');
+}
+#list ul li .controls .delete {
+   position: absolute;
+   right: 72px;
+   width: 9px;
+   top: 0;
+   background: url('popup-item-delete.png');
+}
+
+
+/* Paging-in-list controls */
+#listpaging {
+   text-align: right;
+   font-size: 10px;
+   position: absolute;
+   bottom: 10px;
+   right: 0px;
+}
+/* common color/border properies for page numbers and next/prev */
+#prev, #next, #pages li
+{
+   display: inline-block;
+   border: 1px solid #acacac;
+   background-color: #ebebeb;
+   color: #646464;
+   cursor: pointer;
+   font-weight: bold;
+   font-size: 10px;
+   height: 19px;
+   line-height: 16px;
+}
+#prev, #next
+{
+   padding-left: 3px;
+   padding-right: 3px;
+}
+#next { margin-left: -2px; }
+#prev.disabled, #next.disabled
+{
+   cursor: default;
+   background-color: #fafafa;
+   color: #ccc;
+   border-color: #d7d7d7;
+}
+#pages {
+   list-style-type: none;
+   display: inline-block;
+   padding: 0;
+   margin: 0;
+}
+#pages li {
+   margin: 0;
+   padding: 0;
+   width: 20px;
+   text-align: center;
+   margin-right: 2px;
+}
+#pages li.selected {
+   color: white;
+   background-color: #363636;
+   border-color: #252525;
+}
+#pages li.ellip
+{
+   width: 10px;
+}
+
+/**** Login in popup ***/
+
+html.login {
+   width: 360px;
+   /*height: 200px;*/
+   display: block
+   overflow: hidden;
+}
+.login body {  }
+
+#popup { display: block; }
+.login #popup { display: none; }
+#popup-login { display: none; }
+.login #popup-login { display: block; }
+
+#popup-login > *
+{
+   padding-left: 10px;
+   padding-right: 10px;
+}
+#popup-login h1
+{
+   padding: 10px;
+   font-size: 16px;
+   line-height: 1em;
+   background-color: #888;
+   color: #ddd;
+}
+#popup-login
+{
+   font-size: 16px;
+}
+#popup-login a
+{
+   font-weight: bold;
+   text-decoration: none;
+}
+#popup-login a:hover
+{
+   color: silver;
+}
+#popup-login .before {
+   margin-bottom: 0px;
+   font-size: 12px;
+}
+#popup-login .after {
+   padding-bottom: 10px;
+}
+#popup-login form
+{
+   padding: 10px;
+   background-color: #AAA;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="popup.css" />
+   <link rel="stylesheet" type="text/css" href="jquery.autocomplete.styles.css" />
+   <script type="text/javascript" src="jquery-1.8.2.js"></script>
+   <script type="text/javascript" src="jquery.url.js"></script>
+   <script type="text/javascript" src="jquery.autocomplete.js"></script>
+   <script type="text/javascript" src="popup.js"></script>
+</head>
+
+<body>
+   <div id="popup-login">
+      <h1>Welcome to Orbvious Interest!</h1>
+      <p class="before">You must enter your username in the
+         <a href="options.html" target="_blank">Options</a> of this extension.
+      </p>
+
+      <p class="after">You don't have a username? It's easy to
+      <a href="http://getpocket.com/signup/" target="_blank">signup</a>!</p>
+   </div>
+
+   <div id="popup">
+
+      <div id="header">
+
+         <form id="tags">
+            Tags:
+            <input type="text" id="tagstext" value=""
+               placeholder="tags, separated by commas" class="empty" />
+            <input type="submit" id="tagssave" value="Save" />
+         </form>
+
+         <div id="headertoolbar">
+            <a class="toolbaritem" id="refresh" title="Refresh" href="#"></a>
+            <a class="toolbaritem" id="unreadlistonline"
+               title="Open Unread list at getpocket.com"
+               href="http://getpocket.com/a/" target="_blank"></a>
+            <a class="toolbaritem" id="options" href="options.html"
+               target="_blank" title="Options"></a>
+            <span id="listselector">
+               <div id="listunread" class="active">Unread</div>
+               <div id="listread">Archive</div>
+            </span>
+            <div id="unreadorread"></div>
+         </div>
+
+      </div>
+
+      <div id="filtertools">
+         <input id="filter" class="reset" type="search" placeholder="Filter by title, url, or tag" />
+         <select id="sortby">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="title">Title</option>
+            <option value="site">Site</option>
+         </select>
+      </div>
+
+      <div id="listcontainer">
+         <div id="list">
+            <ul>
+            </ul>
+         </div>
+      </div>
+
+      <div id="listpaging">
+         <div id="prev">&lt;&lt; prev</div>
+         <ul id="pages"></ul>
+         <div id="next">next &gt;&gt;</div>
+      </div>
+
+   </div>
+</body>
+</html>
+
